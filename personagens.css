@@ -2,41 +2,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap'); /*fonte para paragrafo*/
 /*Reset Basico*/
 *{
+    background-color: #E4E5E6;
     box-sizing: border-box;
-    margin: 0%;
     padding: 0%;
+    margin:0%;
+    font-family: font-family: 'Assassin$';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Assassin$'), url('https://fonts.cdnfonts.com/s/16650/Assassin$.woff') format('woff');;
 }
 body{
-    text-align: center;
-    background-color: #F5F5F5;
     background-image: url(./Imagens/Animus\ Background.jpg); 
-    /*alterar o tamanho da imagem - background-size = cover, countain
-    não repetir a imagem varias vezes - background-repeat:no-repeat
-    mudar posição da imagem - background-position */
-     background-size: cover;
-     background-repeat: no-repeat;
-     background-position: center;
 }
-.item{ /*article dos cards de personagens*/
-    display: inline-block;
-    width: 250px;
-    margin: 15px;
-    padding: 10px;
+#personagem{
     background-color: #c7c8cac0;
-    border-radius: 10px;
-    text-align: center;
+    padding: 50px 20px; /*espaçamento interno*/
 }
-.item img{ /*ajustar espaço dentro do card do projeto*/
-    width: 100%;
-    height: 200px;
-    border-radius: 8px;
-    object-fit: cover;/*ajustar imagem sem distorcer*/
+h1{
+    color: white;
+    background-color: #E4E5E6;
+    
+    
 }
 .container-personagens{
-    font-family: 'Roboto Condensed';
-    font-style: italic;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/robotocondensed/v31/ieVj2ZhZI2eCN5jzbjEETS9weq8-19eLAgM9UvI.woff2) format('woff2');
-    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    display: flex; /*ativa o flexbox*/
+    flex-wrap: wrap; /*quebra a linha se não há espaço o suficiente*/
+    justify-content: center;
+    align-items: stretch; /*mantem altura e esticado de acordo om o container*/
+    gap: 30px; /*espaçamento entre as caixas*/    
+}
+/*alterar os cards de personagens*/
+.item{
+    width: 350px;
+    background-color: #c7c8cac0;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.1s;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+.item:hover{
+    transform: translateY(-10px);
+    background-color: darkred;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+.item:active{
+    background-color: darkred;
+}
+.item img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+    bottom: 15px;
+    padding: 10px;
+}
+.tag{
+    display: inline-block;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    
+    
+}
+.mentor{
+    background-color: white;
+    
+}
+.mentores{
+    background-color: white;
+}
+.templario{
+    background-color: red;
+}
+.fundador{
+    background-color: gold;
+}
+.arabe{
+    background-color: rgb(0, 59, 0);
+}
+.italiano{
+    background-color: green;
+}
+.nativo{
+    background-color: blue;
+}
+.gales{
+    background-color: crimson;
+}
+.americano{
+    background-color: navy;
+}
+.frances{
+    background-color: mediumblue;
+}
+.ingleses{
+    background-color: antiquewhite;
+}
+.egipcio{
+    background-color: goldenrod;
+}
+/*MEDIA QUERY*/ 
+@media(max-width:600px){
+    #personagem h1 {
+        color: black;
+        font-size: 50px;
+    }
+    .item{
+        width: 100%;
+    }
 }
